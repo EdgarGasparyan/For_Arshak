@@ -28,15 +28,18 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     getusers: (state, action) => {
-      state.username = action.payload.username;
-      state.number = action.payload.number;
-      state.street = action.payload.street;
-      state.apt = action.payload.apt;
-      state.municipality = action.payload.municipality;
-      state.postalCode = action.payload.postalCode;
-      state.telephone = action.payload.telephone;
-      state.otherTelephone = action.payload.otherTelephone;
-      state.email = action.payload.email;
+     return {
+        ...state,
+        username: action.payload.username,
+        number: action.payload.number,
+        street: action.payload.street,
+        apt: action.payload.apt,
+        municipality: action.payload.municipality,
+        postalCode: action.payload.postalCode,
+        telephone: action.payload.telephone,
+        otherTelephone: action.payload.otherTelephone,
+        email: action.payload.email,
+      };
     },
   },
 });
